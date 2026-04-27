@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitation Coupe de Cheveux</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html, body{
+    height:100%;
+    width:100%;
+    overflow-x:hidden;
+    background:#0f2a18;
+}
+
+/* HERO FULL SCREEN */
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    /* BACKGROUND CLEAN FULL SCREEN */
+    background-image:url('Invitation_anniversaire_enfant_dinosaures_vert.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* DARK OVERLAY (pour lisibilité) */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+}
+
+/* VIDEO TOP */
+.video-top{
+    position:absolute;
+    top:60px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:2;
+
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    overflow:hidden;
+
+    border:4px solid #1a3500;
+    box-shadow:0 0 25px rgba(127,255,0,0.6);
+}
+
+.video-top video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* SECTIONS */
+.section{
+    padding:80px 20px;
+    text-align:center;
+     background-color: rgb(241, 240, 197);
+}
+
+.section h2{
+    color:rgb(114, 65, 4) !important;
+    margin-bottom:30px;
+    font-size:40px;
+    letter-spacing:1px;
+font-family: "Amatic SC", sans-serif;
+font-weight: 700;
+-webkit-text-stroke: 0.8px rgb(114, 65, 4)
+
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#000000,#959c91);
+    color:black;
+    font-weight:700;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(172, 180, 165, 0.25);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgb(0, 0, 0);
+}
+
+/* FORM CONTAINER (STYLE CARRE PREMIUM) */
+.form-container{
+    max-width:520px;
+    margin:auto;
+
+    background:rgb(230, 236, 210);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:18px;
+
+    padding:30px;
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.35);
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* petit effet lumière dans la carte */
+.form-container::before{
+    content:"";
+    position:absolute;
+       pointer-events: none;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(0, 0, 0, 0.137),transparent 60%);
+    transform:rotate(25deg);
+}
+
+/* INPUT STYLE CARRE */
+input,select,textarea{
+    width:100%;
+    padding:14px;
+
+    margin-bottom:14px;
+
+    border:none;
+    border-radius:10px;
+
+    outline:none;
+
+     background-color: rgb(241, 240, 197);
+    color:rgb(114, 65, 4);
+
+    font-size:14px;
+
+    border:1px solid rgb(114, 65, 4);
+}
+
+/* placeholder */
+input::placeholder,
+textarea::placeholder{
+    color:rgb(114, 65, 4);
+}
+
+/* TEXTAREA */
+textarea{
+    resize:none;
+    min-height:100px;
+}
+
+/* BUTTON FORM */
+button{
+    width:100%;
+    padding:15px;
+
+    border:none;
+    border-radius:14px;
+
+    background-color: rgb(114, 65, 4);
+    color:black;
+
+    font-weight:700;
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0 8px 20px rgba(127,255,0,0.25);
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgb(114, 65, 4);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .video-top{
+        width:120px;
+        height:120px;
+        top:130px;
+    }
+
+    .section{
+        padding:40px 15px;
+    }
+}
+
+/* SOUND BUTTON */
+.sound-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #2a5300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(127,255,0,0.6);
+    z-index: 99999;
+}
+.sound-btn:hover{
+    transform:scale(1.1);
+}
+
+@media (max-width: 600px){
+    .sound-btn{
+        width:50px;
+        height:50px;
+        bottom:15px;
+        right:15px;
+        font-size:20px;
+    }
+}
+
+.monkey-line{
+    position: relative;
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* singe */
+.monkey{
+    position: absolute;
+    top: 10px;
+    left: -120px;
+    width: 200px;
+
+    animation: monkeyMove 3s linear forwards;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    position: relative;
+    width: 100%;
+    height: 140px; /* 🔥 compact */
+    overflow: hidden;
+}
+
+/* IMAGE BACKGROUND */
+.footer-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* OVERLAY SUR IMAGE */
+.footer-overlay{
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.25); /* léger assombrissement */
+}
+
+/* CONTAINER ICÔNES */
+.footer-icons{
+    display: flex;
+    gap: 15px;
+}
+
+/* BOUTONS ICÔNES */
+.icon-btn{
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(241, 240, 197, 0.95);
+
+    text-decoration: none;
+
+    transition: 0.3s;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.icon-btn:hover{
+    transform: scale(1.12);
+}
+
+/* IMAGES ICÔNES */
+.icon-img{
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px){
+    .footer{
+        height: 120px;
+    }
+
+    .icon-btn{
+        width: 45px;
+        height: 45px;
+    }
+
+    .icon-img{
+        width: 22px;
+        height: 22px;
+    }
+}
+
+
+.footer-message{
+    position: absolute;
+    bottom: 10px;
+
+    width: 100%;
+    text-align: center;
+
+    color: white;
+    font-size: 13px;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+
+    <div class="video-top">
+        <video autoplay muted loop>
+            <source src="b3cdfc3f-df4a-47a1-877f-d3dcdc53650a_Nero_AI_Face_Animation_Saluer 2.mov" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+
+
+
+<!-- FORM -->
+<!-- FORM -->
+<!-- FORM -->
+<section id="form" class="section">
+
+    <div class="form-container">
+
+        <div class="monkey-line">
+
+            <img src="200w.gif" class="monkey">
+
+            <h2 class="form-title">
+                Confirme ta présence 
+            </h2>
+
+        </div>
+
+        <form id="contact-form">
+            <input type="text" placeholder="Nom">
+
+            <input type="number" placeholder="Nombre de personnes">
+
+            <input type="number" placeholder="Nombre d’enfants">
+
+            <select>
+                <option>Présent ?</option>
+                <option>Oui</option>
+                <option>Non</option>
+            </select>
+
+            <textarea rows="4" placeholder="Message"></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+    </div>
+
+<footer class="footer">
+
+    <img src="paysage.jpg" class="footer-img">
+
+    <div class="footer-overlay">
+
+        <div class="footer-icons">
+
+            <a href="https://waze.com/ul/hsv8yms75g" target="_blank" class="icon-btn">
+                <img src="waze (1).png" class="icon-img">
+            </a>
+
+         
+        </div>
+
+    </div>
+
+    <p class="footer-message">
+    Votre présence rendra ce moment encore plus spécial 🌿
+</p>
+
+</footer>
+
+
+
+</section>
+<!-- AUDIO (HORS SECTION IMPORTANT) -->
+<audio id="music" loop>
+    <source src="fredji-flying-high-vlog-no-copyright-music_o2E85X23.mp3" type="audio/mp3">
+</audio>
+
+<!-- SOUND BUTTON (HORS SECTION IMPORTANT) -->
+<div class="sound-btn" id="soundBtn">
+    🔊
+</div>
+
+<script>
+const music = document.getElementById("music");
+const btn = document.getElementById("soundBtn");
+
+let isPlaying = false;
+
+/* 🔥 AUTO PLAY (avec fallback navigateur) */
+function startMusic() {
+    music.play()
+    .then(() => {
+        isPlaying = true;
+        btn.innerHTML = "🔊";
+    })
+    .catch(() => {
+        console.log("Autoplay bloqué");
+    });
+}
+
+window.addEventListener("load", () => {
+    startMusic();
+
+    // fallback si bloqué (iPhone surtout)
+    document.addEventListener("click", startMusic, { once: true });
+    document.addEventListener("touchstart", startMusic, { once: true });
+});
+
+
+/* 🔥 BOUTON SON */
+btn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "🔊";
+        isPlaying = true;
+    } else {
+        music.pause();
+        btn.innerHTML = "🔇";
+        isPlaying = false;
+    }
+});
+</script>
+
+<script>
+window.addEventListener("load", () => {
+    const title = document.querySelector(".form-title");
+
+    setTimeout(() => {
+        title.classList.add("show");
+    }, 3000); // après passage du singe
+});
+</script>
+
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_qll4kev", "template_mjxoxte", {
+        name: document.querySelector('input[placeholder="Nom"]').value,
+        people: document.querySelector('input[placeholder="Nombre de personnes"]').value,
+        children: document.querySelector('input[placeholder="Nombre d’enfants"]').value,
+        presence: document.querySelector("select").value,
+        message: document.querySelector("textarea").value,
+    })
+    .then(() => {
+        alert("Message envoyé ✅");
+        document.getElementById("contact-form").reset();
+    })
+    .catch((error) => {
+        alert("Erreur ❌");
+        console.log(error);
+    });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("j7Tu0MMk0fp_Je5d3");
+</script>
+
+
+
+</body>
+</html>
